@@ -43,6 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     url: "https://drive.google.com/file/d/1HjsDhLEqZBaoi06MIJTdN_z-joiXfe3K/view?usp=drivesdk"
                 }
             ]
+        },
+         {
+            name: "Semana 5",
+            content: "Teoría avanzada.",
+            files: [
+                {
+                   name: "Actividad Semana 4.pdf",
+                    url: "https://drive.google.com/file/d/1HjsDhLEqZBaoi06MIJTdN_z-joiXfe3K/view?usp=drivesdk" 
+                }
+            ]
         }
     ];
 
@@ -164,4 +174,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
 });
