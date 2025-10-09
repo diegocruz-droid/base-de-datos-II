@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             files: [
                 {
                     name: "Documento Semana 1.pdf",
-                    url: "https://drive.google.com/open?id=1zuENLjGmE0nl7p7QYSBl8L0qK9-pSXR4&usp=drive_fs"
+                    url: "https://github.com/diegocruz-droid/base-de-datos-II/blob/main/semana1/index.html"
                 }
             ]
         },
@@ -176,3 +176,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
