@@ -47,7 +47,7 @@ header {
 
 #login-container button {
     padding: 10px 20px;
-    background-color: var(--success);
+    background-color: : var(--primary-hover)
     border: none;
     color: var(--text-light);
     cursor: pointer;
@@ -126,6 +126,7 @@ body.dark-mode .folder {
     background-color: #222;
     border-color: #444;
 }
+
 
 
 
