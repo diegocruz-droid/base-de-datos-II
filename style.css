@@ -36,13 +36,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bg-dark);
+    background-color: #ffffff;
     padding: 10px 20px;
     color: var(--text-light);
 }
 
 #logo-container img {
-    height: 60px;
+    height: 80px;
 }
 
 #login-container button {
@@ -126,4 +126,5 @@ body.dark-mode .folder {
     background-color: #222;
     border-color: #444;
 }
+
 
