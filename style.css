@@ -107,8 +107,8 @@ button:hover {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: #ffffff;
+    color: var(--bg-dark);
 }
 
 /* 🌙 Modo oscuro (opcional con una clase en body) */
@@ -126,5 +126,6 @@ body.dark-mode .folder {
     background-color: #222;
     border-color: #444;
 }
+
 
 
