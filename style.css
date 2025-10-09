@@ -47,7 +47,7 @@ header {
 
 #login-container button {
     padding: 10px 20px;
-    background-color: : var(--primary-hover)
+    background-color: var(--primary-hover)
     border: none;
     color: var(--text-light);
     cursor: pointer;
@@ -127,6 +127,64 @@ body.dark-mode .folder {
     border-color: #444;
 }
 
+/* 🔗 Botón Sobre mí */
+.sobre-btn {
+    margin-left: 10px;
+    padding: 10px 15px;
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sobre-btn:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+/* 👤 Sección Sobre mí */
+#sobre-mi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px;
+    color: #fff;
+    text-align: justify;
+}
+
+.sobre-contenido {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 900px;
+    gap: 30px;
+}
+
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.texto-sobre h1 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.texto-sobre p {
+    font-size: 18px;
+    line-height: 1.6;
+}
 
 
 
