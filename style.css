@@ -189,6 +189,95 @@ body.dark-mode .folder {
     line-height: 1.6;
 }
 
+/* 🧩 Estilos del área de login y configuración de usuario */
+#user-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
+    border: 2px solid var(--primary); /* 🔹 Borde azul */
+    border-radius: 12px;
+    padding: 30px 40px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+#user-settings h2 {
+    color: #111;
+    margin-bottom: 20px;
+}
+
+#user-settings label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#user-settings input[type="text"],
+#user-settings input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#user-settings input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* Botón guardar */
+#save-user-btn {
+    width: 100%;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#save-user-btn:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+/* 🧱 Panel de administración con fondo blanco */
+#admin-panel {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--primary); /* 🔹 Borde azul */
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#admin-panel h2 {
+    color: #111;
+    margin-bottom: 15px;
+}
+
+/* 🗂 Contenedor de carpetas con fondo blanco semitransparente */
+#folders-container {
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid var(--primary); /* 🔹 Borde azul */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 
 
