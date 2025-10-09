@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             files: [
                 {
                     name: "Documento Semana 1.pdf",
-                    url: "AQUI VA EL ENLACE"
+                    url: "https://github.com/diegocruz-droid/base-de-datos-II/blob/main/semana1/Presentation.pdf"
                 }
             ]
         },
@@ -256,3 +256,4 @@ document.addEventListener('DOMContentLoaded', () => {
         return url;
     }
 });
+
