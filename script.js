@@ -9,25 +9,165 @@ document.addEventListener('DOMContentLoaded', () => {
     // Usuario y contraseña iniciales
     let credentials = { username: "admin", password: "1234" };
 
-    // 📂 Contenido de las carpetas
+    // 📂 Contenido de las carpetas (16 semanas)
     const folderData = [
         {
             name: "Semana 1",
             content: "Material introductorio.",
             files: [
                 {
-                    name: "Presentation.pdf",
-                    url: "https://raw.githubusercontent.com/diegocruz-droid/base-de-datos-II/11bd0bd11e0adc199fa5dd43423e91659c658be9/semana1/Presentation.pdf"
+                    name: "Documento Semana 1.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 2",
+            content: "Contenido de la semana 2.",
+            files: [
+                {
+                    name: "Documento Semana 2.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 3",
+            content: "Contenido de la semana 3.",
+            files: [
+                {
+                    name: "Documento Semana 3.pdf",
+                    url: "AQUI VA EL ENLACE"
                 }
             ]
         },
         {
             name: "Semana 4",
-            content: "Actividades y PDF de la semana 4.",
+            content: "Contenido de la semana 4.",
             files: [
                 {
-                    name: "Actividad Semana 4.pdf",
-                    url: "https://drive.google.com/file/d/1HjsDhLEqZBaoi06MIJTdN_z-joiXfe3K/view?usp=drivesdk"
+                    name: "Documento Semana 4.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 5",
+            content: "Contenido de la semana 5.",
+            files: [
+                {
+                    name: "Documento Semana 5.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 6",
+            content: "Contenido de la semana 6.",
+            files: [
+                {
+                    name: "Documento Semana 6.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 7",
+            content: "Contenido de la semana 7.",
+            files: [
+                {
+                    name: "Documento Semana 7.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 8",
+            content: "Contenido de la semana 8.",
+            files: [
+                {
+                    name: "Documento Semana 8.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 9",
+            content: "Contenido de la semana 9.",
+            files: [
+                {
+                    name: "Documento Semana 9.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 10",
+            content: "Contenido de la semana 10.",
+            files: [
+                {
+                    name: "Documento Semana 10.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 11",
+            content: "Contenido de la semana 11.",
+            files: [
+                {
+                    name: "Documento Semana 11.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 12",
+            content: "Contenido de la semana 12.",
+            files: [
+                {
+                    name: "Documento Semana 12.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 13",
+            content: "Contenido de la semana 13.",
+            files: [
+                {
+                    name: "Documento Semana 13.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 14",
+            content: "Contenido de la semana 14.",
+            files: [
+                {
+                    name: "Documento Semana 14.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 15",
+            content: "Contenido de la semana 15.",
+            files: [
+                {
+                    name: "Documento Semana 15.pdf",
+                    url: "AQUI VA EL ENLACE"
+                }
+            ]
+        },
+        {
+            name: "Semana 16",
+            content: "Contenido de la semana 16.",
+            files: [
+                {
+                    name: "Documento Semana 16.pdf",
+                    url: "AQUI VA EL ENLACE"
                 }
             ]
         }
@@ -93,13 +233,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (fileList.style.display === 'none') {
                 if (folderInfo && folderInfo.files.length > 0) {
                     fileList.innerHTML = folderInfo.files
-                        .map(file => `
-                            <p>📄 
-                                <a href="#" class="preview-link" data-url="${file.url}" data-name="${file.name}">
-                                    ${file.name}
-                                </a>
-                            </p>
-                        `)
+                        .map(file => {
+                            const finalURL = transformarURL(file.url);
+                            return `<p>📄 <a href="${finalURL}" target="_blank">${file.name}</a></p>`;
+                        })
                         .join('');
                 } else {
                     fileList.innerHTML = "<p>No hay archivos disponibles.</p>";
@@ -109,54 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 fileList.style.display = 'none';
             }
         }
-
-        // Mostrar vista previa del archivo
-        if (event.target.classList.contains('preview-link')) {
-            event.preventDefault();
-            const url = transformarURL(event.target.getAttribute('data-url'));
-            const name = event.target.getAttribute('data-name');
-            mostrarVistaPrevia(url, name);
-        }
     });
 
-    // 🔁 Transformar enlaces de Drive o GitHub para previsualización
+    // 🔁 Transformar enlaces de GitHub (de blob a raw)
     function transformarURL(url) {
-        if (url.includes("drive.google.com")) {
-            const fileId = url.match(/\/d\/([^/]+)/);
-            return fileId ? `https://drive.google.com/file/d/${fileId[1]}/preview` : url;
-        }
         if (url.includes("github.com") && url.includes("/blob/")) {
-            return url.replace("/blob/", "/raw/");
+            return url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/");
         }
         return url;
-    }
-
-    // 🔍 Crear contenedor para vista previa
-    const previewContainer = document.createElement('section');
-    previewContainer.id = 'preview-container';
-    previewContainer.style = `
-        margin-top: 30px;
-        background: rgba(255,255,255,0.95);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    `;
-    foldersContainer.insertAdjacentElement('afterend', previewContainer);
-
-    // 🧩 Mostrar vista previa
-    function mostrarVistaPrevia(url, nombre) {
-        previewContainer.innerHTML = `
-            <h2>${nombre}</h2>
-            <iframe 
-                src="${url}" 
-                width="100%" 
-                height="600px" 
-                style="border:none; border-radius:10px;">
-            </iframe>
-            <div style="text-align:center; margin-top:10px;">
-                <a href="${url}" target="_blank" class="download-btn" style="text-decoration:none; background:#007BFF; color:white; padding:8px 15px; border-radius:6px;">Abrir en nueva pestaña</a>
-            </div>
-        `;
-        previewContainer.scrollIntoView({ behavior: 'smooth' });
     }
 });
