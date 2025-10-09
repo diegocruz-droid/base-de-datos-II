@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             name: "Semana 2",
-            content: "Contenido de la semana 2.",
+            content: ,
             files: [
                 {
                     name: "Documento Semana 2.pdf",
@@ -256,4 +256,5 @@ document.addEventListener('DOMContentLoaded', () => {
         return url;
     }
 });
+
 
