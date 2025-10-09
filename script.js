@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             name: "Semana 2",
-            content: ,
+            content: "Contenido de la semana 2.",
             files: [
                 {
-                    name: "Documento Semana 2.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 3.",
             files: [
                 {
-                    name: "Documento Semana 3.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 4.",
             files: [
                 {
-                    name: "Documento Semana 4.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 5.",
             files: [
                 {
-                    name: "Documento Semana 5.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 6.",
             files: [
                 {
-                    name: "Documento Semana 6.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 7.",
             files: [
                 {
-                    name: "Documento Semana 7.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 8.",
             files: [
                 {
-                    name: "Documento Semana 8.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 9.",
             files: [
                 {
-                    name: "Documento Semana 9.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 10.",
             files: [
                 {
-                    name: "Documento Semana 10.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 11.",
             files: [
                 {
-                    name: "Documento Semana 11.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 12.",
             files: [
                 {
-                    name: "Documento Semana 12.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 13.",
             files: [
                 {
-                    name: "Documento Semana 13.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 14.",
             files: [
                 {
-                    name: "Documento Semana 14.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 15.",
             files: [
                 {
-                    name: "Documento Semana 15.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: "Contenido de la semana 16.",
             files: [
                 {
-                    name: "Documento Semana 16.pdf",
+                    name: "",
                     url: "AQUI VA EL ENLACE"
                 }
             ]
