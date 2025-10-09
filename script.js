@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 📂 Contenido de las carpetas
     const folderData = [
-         {
+        {
             name: "Semana 1",
             content: "Material introductorio.",
             files: [
                 {
-                    name: "Documento Semana 1.pdf",
-                    url: "https://es.egw.news/_next/image?url=https%3A%2F%2Fegw.news%2Fuploads%2Fnews%2F1%2F17%2F1736150065872_1736150065873.webp&w=750&q=75"
+                    name: "Presentation.pdf",
+                    url: "https://raw.githubusercontent.com/diegocruz-droid/base-de-datos-II/11bd0bd11e0adc199fa5dd43423e91659c658be9/semana1/Presentation.pdf"
                 }
             ]
         },
@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             ]
         },
-         {
+        {
             name: "Semana 5",
             content: "Teoría avanzada.",
             files: [
                 {
-                   name: "Actividad Semana 4.pdf",
-                    url: "https://drive.google.com/file/d/1HjsDhLEqZBaoi06MIJTdN_z-joiXfe3K/view?usp=drivesdk" 
+                    name: "Actividad Semana 5.pdf",
+                    url: "https://drive.google.com/file/d/1HjsDhLEqZBaoi06MIJTdN_z-joiXfe3K/view?usp=drivesdk"
                 }
             ]
         }
@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (newName) folder.querySelector('h3').textContent = newName;
             if (newDescription) folder.querySelector('p').textContent = newDescription;
 
-            // Actualiza también el arreglo folderData
             if (folderData[folderNumber - 1]) {
                 folderData[folderNumber - 1].name = newName;
                 folderData[folderNumber - 1].content = newDescription;
@@ -152,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("✅ Usuario y contraseña actualizados");
     });
 
-    // 👁️ Ver contenido (archivos Drive)
+    // 👁️ Ver contenido (archivos y vista previa)
     foldersContainer.addEventListener('click', (event) => {
         if (event.target.classList.contains('view-btn')) {
             const folder = event.target.closest('.folder');
@@ -163,7 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (fileList.style.display === 'none') {
                 if (folderInfo && folderInfo.files.length > 0) {
                     fileList.innerHTML = folderInfo.files
-                        .map(file => `<p>📄 <a href="${file.url}" target="_blank">${file.name}</a></p>`)
+                        .map(file => `
+                            <p>📄 
+                                <a href="#" class="preview-link" data-url="${file.url}" data-name="${file.name}">
+                                    ${file.name}
+                                </a>
+                            </p>
+                        `)
                         .join('');
                 } else {
                     fileList.innerHTML = "<p>No hay archivos disponibles.</p>";
@@ -173,8 +178,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 fileList.style.display = 'none';
             }
         }
+
+        // Mostrar vista previa del archivo
+        if (event.target.classList.contains('preview-link')) {
+            event.preventDefault();
+            const url = event.target.getAttribute('data-url');
+            const name = event.target.getAttribute('data-name');
+            mostrarVistaPrevia(url, name);
+        }
     });
 
+    // 🔍 Crear contenedor para vista previa
+    const previewContainer = document.createElement('section');
+    previewContainer.id = 'preview-container';
+    previewContainer.style = `
+        margin-top: 30px;
+        background: rgba(255,255,255,0.95);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    `;
+    foldersContainer.insertAdjacentElement('afterend', previewContainer);
+
+    // 🧩 Función para mostrar el archivo
+    function mostrarVistaPrevia(url, nombre) {
+        previewContainer.innerHTML = `
+            <h2>${nombre}</h2>
+            <iframe 
+                src="${url}" 
+                width="100%" 
+                height="600px" 
+                style="border:none; border-radius:10px;">
+            </iframe>
+        `;
+        previewContainer.scrollIntoView({ behavior: 'smooth' });
+    }
 });
+
 
 
