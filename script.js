@@ -7,63 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveUserBtn = document.getElementById('save-user-btn');
 
     // Usuario y contraseña iniciales
-    let credentials = {
-        username: "admin",
-        password: "1234"
-    };
+    let credentials = { username: "admin", password: "1234" };
 
-    // 📂 Contenido de las carpetas
+    // 📂 Solo Semana 1
     const folderData = [
         {
             name: "Semana 1",
-            content: "Material introductorio.",
+            content: "Material introductorio. Contiene la presentación del curso.",
             files: [
                 {
                     name: "Presentation.pdf",
                     url: "https://raw.githubusercontent.com/diegocruz-droid/base-de-datos-II/11bd0bd11e0adc199fa5dd43423e91659c658be9/semana1/Presentation.pdf"
                 }
             ]
-        },
-        {
-            name: "Semana 2",
-            content: "Ejercicios básicos.",
-            files: []
-        },
-        {
-            name: "Semana 3",
-            content: "Teoría avanzada.",
-            files: []
-        },
-        {
-            name: "Semana 4",
-            content: "Actividades y PDF de la semana 4.",
-            files: [
-                {
-                    name: "Actividad Semana 4.pdf",
-                    url: "https://drive.google.com/file/d/1HjsDhLEqZBaoi06MIJTdN_z-joiXfe3K/view?usp=drivesdk"
-                }
-            ]
-        },
-        {
-            name: "Semana 5",
-            content: "Teoría avanzada.",
-            files: [
-                {
-                    name: "Actividad Semana 5.pdf",
-                    url: "https://drive.google.com/file/d/1HjsDhLEqZBaoi06MIJTdN_z-joiXfe3K/view?usp=drivesdk"
-                }
-            ]
         }
     ];
 
     // 🔧 Crear carpeta
-    const createFolder = (folderNumber) => {
-        const folderInfo = folderData[folderNumber - 1] || {
-            name: `Carpeta ${folderNumber}`,
-            content: "Sin contenido disponible.",
-            files: []
-        };
-
+    const createFolder = (folderInfo) => {
         const folder = document.createElement('div');
         folder.classList.add('folder');
         folder.innerHTML = `
@@ -75,11 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return folder;
     };
 
-    // 🧱 Crear 16 carpetas
-    for (let i = 1; i <= 16; i++) {
-        const folder = createFolder(i);
+    // 🧱 Crear carpeta de Semana 1
+    folderData.forEach(folderInfo => {
+        const folder = createFolder(folderInfo);
         foldersContainer.appendChild(folder);
-    }
+    });
 
     // 🔐 Login
     loginBtn.addEventListener('click', () => {
@@ -98,60 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ➕ Agregar carpeta
-    document.getElementById('add-folder-btn').addEventListener('click', () => {
-        const folderNumber = foldersContainer.children.length + 1;
-        const newFolder = createFolder(folderNumber);
-        foldersContainer.appendChild(newFolder);
-    });
-
-    // 🗑️ Eliminar carpeta
-    document.getElementById('delete-folder-btn').addEventListener('click', () => {
-        if (foldersContainer.children.length > 0) {
-            foldersContainer.removeChild(foldersContainer.lastElementChild);
-        } else {
-            alert('⚠️ No hay carpetas para eliminar');
-        }
-    });
-
-    // ✏️ Editar carpeta (nombre + descripción)
-    document.getElementById('edit-folder-btn').addEventListener('click', () => {
-        const folderNumber = prompt('¿Qué carpeta deseas editar? (Número)');
-        const folder = foldersContainer.querySelector(`.folder:nth-child(${folderNumber})`);
-
-        if (folder) {
-            const currentName = folder.querySelector('h3').textContent;
-            const currentDesc = folder.querySelector('p').textContent;
-
-            const newName = prompt('Nuevo nombre de la carpeta:', currentName);
-            const newDescription = prompt('Nuevo subtítulo o descripción:', currentDesc);
-
-            if (newName) folder.querySelector('h3').textContent = newName;
-            if (newDescription) folder.querySelector('p').textContent = newDescription;
-
-            if (folderData[folderNumber - 1]) {
-                folderData[folderNumber - 1].name = newName;
-                folderData[folderNumber - 1].content = newDescription;
-            }
-
-            alert(`✅ Carpeta ${folderNumber} actualizada correctamente.`);
-        } else {
-            alert('⚠️ Carpeta no encontrada');
-        }
-    });
-
     // 💾 Guardar usuario y contraseña
     saveUserBtn.addEventListener('click', () => {
-        const newUser = document.getElementById('username').value;
-        const newPass = document.getElementById('password').value;
-
-        credentials.username = newUser;
-        credentials.password = newPass;
-
+        credentials.username = document.getElementById('username').value;
+        credentials.password = document.getElementById('password').value;
         alert("✅ Usuario y contraseña actualizados");
     });
 
-    // 👁️ Ver contenido (archivos y vista previa)
+    // 👁️ Ver contenido
     foldersContainer.addEventListener('click', (event) => {
         if (event.target.classList.contains('view-btn')) {
             const folder = event.target.closest('.folder');
@@ -200,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     foldersContainer.insertAdjacentElement('afterend', previewContainer);
 
-    // 🧩 Función para mostrar el archivo
+    // 🧩 Mostrar vista previa
     function mostrarVistaPrevia(url, nombre) {
         previewContainer.innerHTML = `
             <h2>${nombre}</h2>
@@ -210,6 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 height="600px" 
                 style="border:none; border-radius:10px;">
             </iframe>
+            <div style="text-align:center; margin-top:10px;">
+                <a href="${url}" target="_blank" class="download-btn" style="text-decoration:none; background:#007BFF; color:white; padding:8px 15px; border-radius:6px;">Abrir en nueva pestaña</a>
+            </div>
         `;
         previewContainer.scrollIntoView({ behavior: 'smooth' });
     }
