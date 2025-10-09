@@ -47,9 +47,10 @@ header {
 
 #login-container button {
     padding: 10px 20px;
-    background-color: var(--primary-hover)
+    background-color: var(--primary);
     border: none;
-    color: var(--text-light);
+    color: #fff; /* 🔹 Texto blanco */
+    font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -59,6 +60,8 @@ header {
     background-color: var(--primary-hover);
     transform: scale(1.05);
 }
+
+
 
 main {
     flex: 1;
@@ -185,6 +188,7 @@ body.dark-mode .folder {
     font-size: 18px;
     line-height: 1.6;
 }
+
 
 
 
