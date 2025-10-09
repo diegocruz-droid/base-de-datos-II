@@ -9,22 +9,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Usuario y contraseña iniciales
     let credentials = { username: "admin", password: "1234" };
 
-    // 📂 Solo Semana 1
+    // 📂 Contenido de las carpetas
     const folderData = [
         {
             name: "Semana 1",
-            content: "Material introductorio. Contiene la presentación del curso.",
+            content: "Material introductorio.",
             files: [
                 {
                     name: "Presentation.pdf",
                     url: "https://raw.githubusercontent.com/diegocruz-droid/base-de-datos-II/11bd0bd11e0adc199fa5dd43423e91659c658be9/semana1/Presentation.pdf"
                 }
             ]
+        },
+        {
+            name: "Semana 4",
+            content: "Actividades y PDF de la semana 4.",
+            files: [
+                {
+                    name: "Actividad Semana 4.pdf",
+                    url: "https://drive.google.com/file/d/1HjsDhLEqZBaoi06MIJTdN_z-joiXfe3K/view?usp=drivesdk"
+                }
+            ]
         }
     ];
 
     // 🔧 Crear carpeta
-    const createFolder = (folderInfo) => {
+    const createFolder = (folderNumber) => {
+        const folderInfo = folderData[folderNumber - 1] || {
+            name: `Carpeta ${folderNumber}`,
+            content: "Sin contenido disponible.",
+            files: []
+        };
+
         const folder = document.createElement('div');
         folder.classList.add('folder');
         folder.innerHTML = `
@@ -36,11 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return folder;
     };
 
-    // 🧱 Crear carpeta de Semana 1
-    folderData.forEach(folderInfo => {
-        const folder = createFolder(folderInfo);
+    // 🧱 Crear 16 carpetas
+    for (let i = 1; i <= 16; i++) {
+        const folder = createFolder(i);
         foldersContainer.appendChild(folder);
-    });
+    }
 
     // 🔐 Login
     loginBtn.addEventListener('click', () => {
@@ -97,11 +113,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mostrar vista previa del archivo
         if (event.target.classList.contains('preview-link')) {
             event.preventDefault();
-            const url = event.target.getAttribute('data-url');
+            const url = transformarURL(event.target.getAttribute('data-url'));
             const name = event.target.getAttribute('data-name');
             mostrarVistaPrevia(url, name);
         }
     });
+
+    // 🔁 Transformar enlaces de Drive o GitHub para previsualización
+    function transformarURL(url) {
+        if (url.includes("drive.google.com")) {
+            const fileId = url.match(/\/d\/([^/]+)/);
+            return fileId ? `https://drive.google.com/file/d/${fileId[1]}/preview` : url;
+        }
+        if (url.includes("github.com") && url.includes("/blob/")) {
+            return url.replace("/blob/", "/raw/");
+        }
+        return url;
+    }
 
     // 🔍 Crear contenedor para vista previa
     const previewContainer = document.createElement('section');
@@ -132,6 +160,3 @@ document.addEventListener('DOMContentLoaded', () => {
         previewContainer.scrollIntoView({ behavior: 'smooth' });
     }
 });
-
-
-
