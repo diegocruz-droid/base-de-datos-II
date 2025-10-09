@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             files: [
                 {
                     name: "Documento Semana 1.pdf",
-                    url: "https://github.com/diegocruz-droid/base-de-datos-II/blob/main/semana1/index.html"
+                    url: "https://es.egw.news/_next/image?url=https%3A%2F%2Fegw.news%2Fuploads%2Fnews%2F1%2F17%2F1736150065872_1736150065873.webp&w=750&q=75"
                 }
             ]
         },
@@ -176,4 +176,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
 
