@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             files: [
                 {
                     name: "diseño de arquitectura de base de datos",
-                    url: "https://github.com/diegocruz-droid/base-de-datos-II/blob/main/semana4/Dise%C3%B1o%20de%20Arquitectura%20de%20Base%20de%20Datos.pdf"
+                    url: "https://raw.githubusercontent.com/diegocruz-droid/base-de-datos-II/main/semana4/Dise%C3%B1o%20de%20Arquitectura%20de%20Base%20de%20Datos.pdf"
                 }
             ]
         },
@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return url;
     }
 });
+
 
 
 
