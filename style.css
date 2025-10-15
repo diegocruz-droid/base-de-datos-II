@@ -9,17 +9,7 @@
     --text-light: #fff;
 }
 
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: var(--bg-light);
-    color: #333;
-}
+/* 🌐 Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -32,65 +22,39 @@ body {
     color: #333;
 }
 
+/* 🔝 Encabezado */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
     padding: 10px 20px;
-    color: var(--text-light);
+    color: var(--bg-dark);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 #logo-container img {
     height: 80px;
 }
 
-#login-container button {
-    padding: 10px 20px;
-    background-color: var(--primary);
-    border: none;
-    color: #fff; /* 🔹 Texto blanco */
-    font-weight: bold;
-    cursor: pointer;
+/* 🔘 Botones de cabecera */
+header nav a {
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-left: 10px;
     border-radius: 5px;
+    color: var(--text-light);
+    background-color: var(--primary);
+    font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#login-container button:hover {
+header nav a:hover {
     background-color: var(--primary-hover);
     transform: scale(1.05);
 }
 
-
-
-main {
-    flex: 1;
-    padding: 20px;
-}
-
-/* Grid de carpetas adaptable */
-#folders-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.folder {
-    border: 2px solid #ccc;
-    padding: 20px;
-    text-align: center;
-    background-color: var(--bg-light);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.folder:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Botones globales */
+/* 💾 Botones generales */
 button {
     margin-top: 10px;
     padding: 10px;
@@ -107,45 +71,37 @@ button:hover {
     transform: scale(1.05);
 }
 
-footer {
+/* 📂 Sección principal de carpetas */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* 🗂 Grid adaptable */
+#folders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.folder {
+    border: 2px solid #ccc;
+    padding: 20px;
     text-align: center;
-    padding: 10px;
-    background-color: #ffffff;
-    color: var(--bg-dark);
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-/* 🌙 Modo oscuro (opcional con una clase en body) */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #eee;
-}
-
-body.dark-mode header,
-body.dark-mode footer {
-    background-color: #111;
-}
-
-body.dark-mode .folder {
-    background-color: #222;
-    border-color: #444;
-}
-
-/* 🔗 Botón Sobre mí */
-.sobre-btn {
-    margin-left: 10px;
-    padding: 10px 15px;
-    background-color: var(--primary);
-    color: var(--text-light);
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.sobre-btn:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
+.folder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* 👤 Sección Sobre mí */
@@ -189,14 +145,14 @@ body.dark-mode .folder {
     line-height: 1.6;
 }
 
-/* 🧩 Estilos del área de login y configuración de usuario */
+/* 💾 Configuración de usuario */
 #user-settings {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
-    border: 2px solid var(--primary); /* 🔹 Borde azul */
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--primary);
     border-radius: 12px;
     padding: 30px 40px;
     max-width: 400px;
@@ -225,16 +181,8 @@ body.dark-mode .folder {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 16px;
-    box-sizing: border-box;
 }
 
-#user-settings input:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
-}
-
-/* Botón guardar */
 #save-user-btn {
     width: 100%;
     background-color: var(--primary);
@@ -252,10 +200,10 @@ body.dark-mode .folder {
     transform: scale(1.05);
 }
 
-/* 🧱 Panel de administración con fondo blanco */
+/* ⚙️ Panel de administración */
 #admin-panel {
     background: rgba(255, 255, 255, 0.95);
-    border: 2px solid var(--primary); /* 🔹 Borde azul */
+    border: 2px solid var(--primary);
     border-radius: 12px;
     padding: 25px;
     max-width: 600px;
@@ -269,14 +217,80 @@ body.dark-mode .folder {
     margin-bottom: 15px;
 }
 
-/* 🗂 Contenedor de carpetas con fondo blanco semitransparente */
-#folders-container {
-    background: rgba(255, 255, 255, 0.85);
-    border: 2px solid var(--primary); /* 🔹 Borde azul */
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+/* 🌙 Modo oscuro */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #eee;
 }
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #111;
+}
+
+body.dark-mode .folder {
+    background-color: #222;
+    border-color: #444;
+}
+
+/* 🧭 Sección principal tipo “inicio” */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 15px;
+    margin: 50px auto;
+    max-width: 900px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* 📱 Contacto */
+.contacto {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 700px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.contacto a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contacto a:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+/* ⚫ Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    color: var(--bg-dark);
+}
+
+
 
 
 
