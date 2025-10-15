@@ -1,294 +1,115 @@
-/* 🎨 Variables de color */
-:root {
-    --primary: #007bff;
-    --primary-hover: #0056b3;
-    --success: #4CAF50;
-    --success-hover: #45a049;
-    --bg-dark: #333;
-    --bg-light: #f4f4f4;
-    --text-light: #fff;
-}
-
-/* 🌐 Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* 🌌 Estilos especiales para index.html (antes inicio.html) */
+main#principal {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background: url('fondo.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-}
-
-/* 🔝 Encabezado */
-header {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    color: var(--bg-dark);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-#logo-container img {
-    height: 80px;
-}
-
-/* 🔘 Botones de cabecera */
-header nav a {
-    text-decoration: none;
-    padding: 10px 15px;
-    margin-left: 10px;
-    border-radius: 5px;
-    color: var(--text-light);
-    background-color: var(--primary);
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-header nav a:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
-}
-
-/* 💾 Botones generales */
-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: var(--primary);
-    color: var(--text-light);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
-}
-
-/* 📂 Sección principal de carpetas */
-main {
-    flex: 1;
-    padding: 20px;
-}
-
-/* 🗂 Grid adaptable */
-#folders-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.85);
-    border: 2px solid var(--primary);
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-.folder {
-    border: 2px solid #ccc;
-    padding: 20px;
-    text-align: center;
-    background-color: var(--bg-light);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.folder:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* 👤 Sección Sobre mí */
-#sobre-mi {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    padding: 40px;
-    color: #fff;
-    text-align: justify;
+    background-color: #0a2940; /* Azul celeste oscuro */
+    color: var(--text-light);
+    text-align: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-size: cover;
 }
 
-.sobre-contenido {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.6);
+/* 📸 Imagen principal */
+.foto-portada {
+    width: 320px;
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    margin-bottom: 25px;
+}
+
+/* 🧾 Texto de presentación */
+.texto-presentacion {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 30px;
-    max-width: 900px;
-    gap: 30px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
-.foto-perfil {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-}
-
-.texto-sobre h1 {
+.texto-presentacion h1 {
+    font-size: 2.2em;
+    color: #ffffff;
     margin-bottom: 15px;
-    font-size: 28px;
-    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-.texto-sobre p {
-    font-size: 18px;
+.texto-presentacion span {
+    color: #00c8ff;
+    font-weight: bold;
+}
+
+.texto-presentacion p {
+    font-size: 1.1em;
     line-height: 1.6;
 }
 
-/* 💾 Configuración de usuario */
-#user-settings {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid var(--primary);
-    border-radius: 12px;
-    padding: 30px 40px;
-    max-width: 400px;
-    margin: 50px auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    color: #333;
-}
-
-#user-settings h2 {
-    color: #111;
-    margin-bottom: 20px;
-}
-
-#user-settings label {
-    font-weight: bold;
-    color: #333;
-    display: block;
-    margin-bottom: 8px;
-}
-
-#user-settings input[type="text"],
-#user-settings input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-}
-
-#save-user-btn {
-    width: 100%;
-    background-color: var(--primary);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#save-user-btn:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
-}
-
-/* ⚙️ Panel de administración */
-#admin-panel {
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid var(--primary);
-    border-radius: 12px;
-    padding: 25px;
-    max-width: 600px;
-    margin: 40px auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-#admin-panel h2 {
-    color: #111;
-    margin-bottom: 15px;
-}
-
-/* 🌙 Modo oscuro */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #eee;
-}
-
-body.dark-mode header,
-body.dark-mode footer {
-    background-color: #111;
-}
-
-body.dark-mode .folder {
-    background-color: #222;
-    border-color: #444;
-}
-
-/* 🧭 Sección principal tipo “inicio” */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: rgba(255,255,255,0.85);
+/* 🤝 Sección de contacto */
+#contacto {
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    margin: 50px auto;
-    max-width: 900px;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-}
-
-.hero h1 {
-    font-size: 36px;
-    color: var(--primary);
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-/* 📱 Contacto */
-.contacto {
-    text-align: center;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    margin: 40px auto;
+    padding: 40px 20px;
+    width: 90%;
     max-width: 700px;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.contacto a {
+#contacto h2 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* 🔗 Botones de redes con mismo estilo que los del header */
+.redes a {
     display: inline-block;
-    margin: 10px;
+    margin: 10px 15px;
     padding: 10px 20px;
     background-color: var(--primary);
-    color: #fff;
+    color: var(--text-light);
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.contacto a:hover {
+.redes a:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.1);
+}
+
+/* 🦶 Footer coherente con fondo oscuro */
+footer {
+    background: #001c30;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* 🔘 Botón de Portafolio (Inicio) igual que los demás */
+header nav a[href="index.html"] {
+    background-color: var(--primary);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header nav a[href="index.html"]:hover {
     background-color: var(--primary-hover);
     transform: scale(1.05);
 }
 
-/* ⚫ Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #ffffff;
-    color: var(--bg-dark);
-}
 
 
 
