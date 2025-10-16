@@ -22,53 +22,57 @@ body {
     color: #333;
 }
 
-/* 🔝 Encabezado */
+/* 🔝 Encabezado general */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    color: var(--bg-dark);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #001c30; /* Fondo oscuro */
+    padding: 15px 40px;
+    color: white;
+    flex-wrap: wrap;
 }
 
-#logo-container img {
-    height: 80px;
+/* 🔷 Contenedor del logo y nombre centrado */
+#logo-container {
+    display: flex;
+    flex-direction: column; /* Nombre encima del logo */
+    align-items: center;
+    text-align: center;
+    gap: 8px;
 }
 
-/* 🔘 Botones de cabecera */
-header nav a {
-    text-decoration: none;
-    padding: 10px 15px;
-    margin-left: 10px;
-    border-radius: 5px;
-    color: var(--text-light);
-    background-color: var(--primary);
+/* 🖼️ Logo */
+#logo {
+    width: 90px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #00c8ff; /* Línea decorativa opcional */
+}
+
+/* ✍️ Nombre centrado encima del logo */
+#nombre-header {
+    font-size: 22px;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #00c8ff; /* Azul celeste brillante */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0;
+    text-align: center;
 }
 
-header nav a:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
+/* 🧭 Navegación */
+#nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-/* 💾 Botones generales */
-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: var(--primary);
-    color: var(--text-light);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
+#nav-links a:hover {
+    color: #00c8ff;
 }
 
 /* 📂 Sección principal de carpetas */
@@ -446,6 +450,7 @@ header {
 #nav-links a:hover {
     color: #00aaff;
 }
+
 
 
 
