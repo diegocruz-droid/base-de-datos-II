@@ -27,38 +27,36 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #001c30; /* Fondo oscuro */
+    background-color: #001c30; /* Azul oscuro elegante */
     padding: 15px 40px;
     color: white;
     flex-wrap: wrap;
 }
 
-/* 🔷 Contenedor del logo y nombre centrado */
+/* 🔷 Contenedor del logo y nombre uno al lado del otro */
 #logo-container {
     display: flex;
-    flex-direction: column; /* Nombre encima del logo */
-    align-items: center;
-    text-align: center;
-    gap: 8px;
+    align-items: center; /* Centra verticalmente */
+    gap: 15px; /* Espacio entre logo y nombre */
 }
 
 /* 🖼️ Logo */
 #logo {
-    width: 90px;
+    width: 80px;
     height: auto;
     border-radius: 10px;
-    border: 2px solid #00c8ff; /* Línea decorativa opcional */
+    border: 2px solid #00c8ff;
 }
 
-/* ✍️ Nombre centrado encima del logo */
+/* ✍️ Nombre al lado del logo */
 #nombre-header {
     font-size: 22px;
     font-weight: bold;
-    color: #00c8ff; /* Azul celeste brillante */
+    color: #00c8ff;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     margin: 0;
-    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 200, 255, 0.3);
 }
 
 /* 🧭 Navegación */
@@ -74,6 +72,7 @@ header {
 #nav-links a:hover {
     color: #00c8ff;
 }
+
 
 /* 📂 Sección principal de carpetas */
 main {
@@ -450,6 +449,7 @@ header {
 #nav-links a:hover {
     color: #00aaff;
 }
+
 
 
 
