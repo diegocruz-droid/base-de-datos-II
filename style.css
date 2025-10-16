@@ -31,12 +31,13 @@ header {
     padding: 15px 40px;
     color: white;
     flex-wrap: wrap;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* 🔷 Contenedor del logo y nombre uno al lado del otro */
 #logo-container {
     display: flex;
-    align-items: center; /* Centra verticalmente */
+    align-items: center;
     gap: 15px; /* Espacio entre logo y nombre */
 }
 
@@ -54,25 +55,40 @@ header {
     font-weight: bold;
     color: #00c8ff;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px;
     margin: 0;
     text-shadow: 2px 2px 8px rgba(0, 200, 255, 0.3);
 }
 
-/* 🧭 Navegación */
+/* 🧭 Navegación general */
+#nav-links {
+    display: flex;
+    gap: 15px;
+}
+
 #nav-links a {
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--text-light);
     text-decoration: none;
-    margin-left: 20px;
+    border-radius: 8px;
     font-weight: bold;
+    padding: 10px 18px;
     font-size: 16px;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #nav-links a:hover {
-    color: #00c8ff;
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
 }
 
+/* 🟦 Botón activo (página actual) */
+#nav-links a.active {
+    background-color: #00c8ff;
+    color: #001c30;
+    box-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    transform: scale(1.05);
+}
 
 /* 📂 Sección principal de carpetas */
 main {
@@ -449,6 +465,7 @@ header {
 #nav-links a:hover {
     color: #00aaff;
 }
+
 
 
 
