@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     name: "Documento Semana 1.pdf",
                     url: "https://github.com/diegocruz-droid/base-de-datos-II/blob/main/semana1/Presentation.pdf"
+                        
+                    name: "manual intalacion sql server",
+                    url: "https://github.com/diegocruz-droid/base-de-datos-II/blob/main/semana1/Manual_Instalacion_SQL_Server.docx"
                 }
             ]
         },
@@ -256,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return url;
     }
 });
+
 
 
 
