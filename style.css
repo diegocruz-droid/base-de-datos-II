@@ -1,4 +1,4 @@
-/* 🎨 Variables de color */
+/* 🎨 ===== VARIABLES DE COLOR ===== */
 :root {
     --primary: #007bff;
     --primary-hover: #0056b3;
@@ -9,7 +9,7 @@
     --text-light: #fff;
 }
 
-/* 🌐 Estilos generales */
+/* 🌐 ===== ESTILOS GENERALES ===== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -22,7 +22,7 @@ body {
     color: #333;
 }
 
-/* 🔝 Encabezado general */
+/* 🔝 ===== ENCABEZADO GENERAL ===== */
 header {
     display: flex;
     justify-content: space-between;
@@ -34,11 +34,11 @@ header {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* 🔷 Contenedor del logo y nombre uno al lado del otro */
+/* 🔷 Contenedor de logo + nombre */
 #logo-container {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espacio entre logo y nombre */
+    gap: 15px;
 }
 
 /* 🖼️ Logo */
@@ -82,7 +82,7 @@ header {
     transform: scale(1.05);
 }
 
-/* 🟦 Botón activo (página actual) */
+/* 🟦 Botón activo */
 #nav-links a.active {
     background-color: #00c8ff;
     color: #001c30;
@@ -90,13 +90,12 @@ header {
     transform: scale(1.05);
 }
 
-/* 📂 Sección principal de carpetas */
+/* 📂 ===== PANEL DE CARPETAS ===== */
 main {
     flex: 1;
     padding: 20px;
 }
 
-/* 🗂 Grid adaptable */
 #folders-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -123,7 +122,7 @@ main {
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* 👤 Sección Sobre mí */
+/* 👤 ===== SECCIÓN SOBRE MÍ ===== */
 #sobre-mi {
     display: flex;
     justify-content: center;
@@ -164,12 +163,11 @@ main {
     line-height: 1.6;
 }
 
-/* 💾 Configuración de usuario */
+/* 💾 ===== CONFIGURACIÓN DE USUARIO ===== */
 #user-settings {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid var(--primary);
     border-radius: 12px;
@@ -219,7 +217,7 @@ main {
     transform: scale(1.05);
 }
 
-/* ⚙️ Panel de administración */
+/* ⚙️ ===== PANEL DE ADMINISTRACIÓN ===== */
 #admin-panel {
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid var(--primary);
@@ -236,7 +234,7 @@ main {
     margin-bottom: 15px;
 }
 
-/* 🌙 Modo oscuro */
+/* 🌙 ===== MODO OSCURO ===== */
 body.dark-mode {
     background-color: #1a1a1a;
     color: #eee;
@@ -252,70 +250,13 @@ body.dark-mode .folder {
     border-color: #444;
 }
 
-/* 🧭 Sección principal tipo “inicio” */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: rgba(255,255,255,0.85);
-    border-radius: 15px;
-    margin: 50px auto;
-    max-width: 900px;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-}
-
-.hero h1 {
-    font-size: 36px;
-    color: var(--primary);
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-/* 📱 Contacto */
-.contacto {
-    text-align: center;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    margin: 40px auto;
-    max-width: 700px;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-}
-
-.contacto a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: var(--primary);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.contacto a:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
-}
-
-/* ⚫ Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #ffffff;
-    color: var(--bg-dark);
-}
-
-/* 🌌 Estilos especiales para index.html (antes inicio.html) */
+/* 🧭 ===== SECCIÓN INICIO ===== */
 main#principal {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #0a2940; /* Azul celeste oscuro */
+    background-color: #0a2940;
     color: var(--text-light);
     text-align: center;
     min-height: 100vh;
@@ -323,17 +264,14 @@ main#principal {
     background-size: cover;
 }
 
-/* 📸 Imagen principal */
 .foto-portada {
     width: 320px;
-    height: auto;
     border-radius: 20px;
     border: 3px solid #ffffff;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
     margin-bottom: 25px;
 }
 
-/* 🧾 Texto de presentación */
 .texto-presentacion {
     max-width: 800px;
     background: rgba(255, 255, 255, 0.1);
@@ -359,7 +297,7 @@ main#principal {
     line-height: 1.6;
 }
 
-/* 🤝 Sección de contacto */
+/* 🤝 ===== CONTACTO ===== */
 #contacto {
     margin-top: 50px;
     background: rgba(255, 255, 255, 0.1);
@@ -376,7 +314,6 @@ main#principal {
     font-size: 1.8em;
 }
 
-/* 🔗 Botones de redes con mismo estilo que los del header */
 .redes a {
     display: inline-block;
     margin: 10px 15px;
@@ -394,7 +331,7 @@ main#principal {
     transform: scale(1.1);
 }
 
-/* 🦶 Footer coherente con fondo oscuro */
+/* ⚫ ===== FOOTER ===== */
 footer {
     background: #001c30;
     color: #fff;
@@ -404,67 +341,32 @@ footer {
     margin-top: 40px;
 }
 
-/* 🔘 Botón de Portafolio (Inicio) igual que los demás */
-header nav a[href="index.html"] {
-    background-color: var(--primary);
-    color: var(--text-light);
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    padding: 10px 15px;
-    margin-left: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+/* 📱 ===== RESPONSIVIDAD ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sobre-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto-portada {
+        width: 250px;
+    }
+
+    #folders-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 }
 
-header nav a[href="index.html"]:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
-}
-/* Encabezado general */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1a1a1a;
-    padding: 10px 30px;
-    color: white;
-}
-
-/* Contenedor de logo + nombre */
-#logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-/* Logo */
-#logo {
-    width: 70px;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Nombre junto al logo */
-#nombre-header {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    letter-spacing: 1px;
-    margin: 0;
-}
-
-/* Navegación */
-#nav-links a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-#nav-links a:hover {
-    color: #00aaff;
-}
 
 
 
